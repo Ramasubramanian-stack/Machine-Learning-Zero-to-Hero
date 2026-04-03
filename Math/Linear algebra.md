@@ -1,5 +1,5 @@
-# 🚀 Machine Learning from Zero to Hero: Day 1
-## 📘 Linear Algebra Intuition for ML (The "Analogy First" Guide)
+# Machine Learning from Zero to Hero: Day 1
+## Linear Algebra Intuition for ML (The "Analogy First" Guide)
 
 Welcome to the first day of my journey to becoming a Machine Learning Engineer! My goal is to learn ML from scratch and teach it to others using **analogies and intuition**—because formulas are easier to remember when you understand the "why" behind them. This document will serve as a comprehensive guide for Day 1 of our 3-month AI/ML Job-Readiness Training Plan.
 
@@ -370,4 +370,4 @@ You've completed Day 1! To truly master these concepts:
 
 ## Ready for Day 2?
 
-Tomorrow, we'll dive into **Probability & Statistics**, where you'll learn about uncertainty, distributions, and how to make informed decisions with data. Keep up the great work! 🚀
+Tomorrow, we'll dive into **Probability & Statistics**, where you'll learn about uncertainty, distributions, and how to make informed decisions with data. Keep up the great work!
