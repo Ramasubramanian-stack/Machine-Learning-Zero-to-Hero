@@ -91,12 +91,3 @@ print(f"P(Survived | Pclass=1): {prob_survived_pclass1:.2f}")
 ```
 
 ---
-
-## Key Takeaways for Your GitHub
-*   **Probability is Confidence:** Use it to decide how much to trust your model.
-*   **Context is Everything:** Always look at Conditional Probabilities to find the best features.
-*   **Beware the Mean:** Always check the Median to see if Outliers are lying to you.
-*   **Simplicity vs. Complexity:** Don't over-engineer your model; aim for the Bias-Variance "Sweet Spot."
-
----
-*Created by [Your Name] during Day 2-3 of the AI/ML Job-Readiness Plan.*
