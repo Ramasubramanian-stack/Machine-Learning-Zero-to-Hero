@@ -51,13 +51,13 @@ If `y = x²`, then `dy/dx = 2x`
 
 ### Visual — What Does a Derivative Look Like?
 
-![Derivative slope visualization](images/derivative_slope.jpg)
+![Derivative slope visualization](images/derivative_slope.png)
 
 > **The derivative = the slope of the red line touching the curve at one point.**
 > - Steep line → large derivative → fast change
 > - Flat line → derivative = 0 → no change (this is where the minimum is!)
 
-![Steep vs flat derivative intuition](images/derivative_steep_flat.jpg)
+![Steep vs flat derivative intuition](images/derivative_steep_flat.png)
 
 ---
 
@@ -114,7 +114,7 @@ Each value tells: *"If I increase this weight a tiny bit, how does the loss chan
 
 ### Visual — Gradient Descent Step by Step
 
-![Gradient descent curve](images/gradient_descent_curve.jpg)
+![Gradient descent curve](images/gradient_descent_curve.png)
 
 > **Think of this surface as your model's "error landscape."**
 > - The **hills** = high error (bad)
@@ -161,7 +161,7 @@ This is the algorithm originally attributed to **Augustin-Louis Cauchy (1847)** 
 
 ### Visual — Forward Pass and Backward Pass
 
-![Neural network forward and backward](images/nn_forward_backward.jpg)
+![Neural network forward and backward](images/nn_forward_backward.png)
 
 > **Each dot = one step the model takes.**
 > - Starts at the top (high error)
@@ -241,7 +241,7 @@ In plain words: after the model makes a mistake, backpropagation figures out **w
 
 ### Visual — Forward Pass and Backward Pass
 
-![Neural network forward and backward](images/nn_forward_backward.jpg)
+![Neural network forward and backward](images/nn_forward_backward.png)
 
 > **Forward pass** = data flows LEFT → RIGHT (input to output, making a prediction)
 > **Backward pass** = error flows RIGHT → LEFT (output back to each layer, adjusting weights)
@@ -328,7 +328,7 @@ Let's see all four concepts come together in a real neural network.
 Input Layer (2 features)  →  Hidden Layer 1 (4 neurons)  →  Hidden Layer 2 (4 neurons)  →  Output Layer (1 neuron)
 ```
 
-![Neural network forward and backward](images/nn_forward_backward.jpg)
+![Neural network forward and backward](images/nn_forward_backward.png)
 
 ---
 
@@ -516,7 +516,7 @@ W₁_new  =  [[ 0.205   0.138  -0.079   0.326 ]
 5.  Repeat         →   Do this for many iterations until loss is very low
 ```
 
-![Training loop (forward + backward)](images/training_loop.jpg)
+![Training loop (forward + backward)](images/training_loop.png)
 
 ---
 
