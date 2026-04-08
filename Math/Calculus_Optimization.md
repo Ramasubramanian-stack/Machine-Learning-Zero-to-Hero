@@ -1,10 +1,10 @@
-# 📘 Day 4–5: Calculus & Optimization for Machine Learning
+# Day 4–5: Calculus & Optimization for Machine Learning
 
 > **Who is this for?** Anyone learning ML from scratch. No scary math — just simple ideas explained clearly.
 
 ---
 
-## 🤔 Why Are We Studying Calculus in ML?
+## Why Are We Studying Calculus in ML?
 
 Machine Learning is **completely an optimization problem**.
 
@@ -21,16 +21,16 @@ Calculus answers all three questions. Specifically, we use it to:
 
 We will cover **4 key concepts**:
 
-1. 🔢 **Derivative** — Rate of change
-2. 🧭 **Gradient** — Direction of change (for many variables)
-3. ⛰️ **Gradient Descent** — The learning algorithm
-4. 🔁 **Backpropagation** — How neural networks learn
+1. **Derivative** — Rate of change
+2. **Gradient** — Direction of change (for many variables)
+3. **Gradient Descent** — The learning algorithm
+4. **Backpropagation** — How neural networks learn
 
 ---
 
 ## Part 1 — Derivative: The Rate of Change
 
-### 📖 Definition
+### Definition
 
 > **A derivative is the rate of change of one variable with respect to another variable.**
 
@@ -49,17 +49,19 @@ If `y = x²`, then `dy/dx = 2x`
 
 ---
 
-### 🖼️ Visual — What Does a Derivative Look Like?
+### Visual — What Does a Derivative Look Like?
 
-![Derivative as slope of tangent line](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Tangent_to_a_curve.svg/640px-Tangent_to_a_curve.svg.png)
+![Derivative slope visualization](images/derivative_slope.jpg)
 
-> 📌 **The derivative = the slope of the red line touching the curve at one point.**
+> **The derivative = the slope of the red line touching the curve at one point.**
 > - Steep line → large derivative → fast change
 > - Flat line → derivative = 0 → no change (this is where the minimum is!)
 
+![Steep vs flat derivative intuition](images/derivative_steep_flat.jpg)
+
 ---
 
-### 💡 Simple Example
+### Simple Example
 
 Imagine you're driving a car. Your **position** changes over time.
 
@@ -73,7 +75,7 @@ In ML:
 
 ---
 
-### 🔍 Where Is It Used in ML?
+### Where Is It Used in ML?
 
 | Use Case | How Derivative Helps |
 |---|---|
@@ -83,7 +85,7 @@ In ML:
 
 ---
 
-### 🎯 Why Do I Need to Study This?
+### Why Do I Need to Study This?
 
 Without knowing the derivative, you can't know *which way to turn the knob* to improve your model. It's the foundation of everything in ML training.
 
@@ -94,7 +96,7 @@ Without knowing the derivative, you can't know *which way to turn the knob* to i
 
 ## Part 2 — Gradient: Derivative for Many Variables
 
-### 📖 Definition
+### Definition
 
 > **A gradient is a vector (a list of numbers) that contains partial derivatives — one for each parameter. It points in the direction of the steepest uphill climb.**
 
@@ -110,11 +112,11 @@ Each value tells: *"If I increase this weight a tiny bit, how does the loss chan
 
 ---
 
-### 🖼️ Visual — The Gradient on a 3D Surface
+### Visual — Gradient Descent Step by Step
 
-![Gradient descent on 3D loss surface](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Extrema_example_original.svg/640px-Extrema_example_original.svg.png)
+![Gradient descent curve](images/gradient_descent_curve.jpg)
 
-> 📌 **Think of this surface as your model's "error landscape."**
+> **Think of this surface as your model's "error landscape."**
 > - The **hills** = high error (bad)
 > - The **valleys** = low error (good)
 > - The **gradient** = the arrow pointing uphill at your current position
@@ -122,7 +124,7 @@ Each value tells: *"If I increase this weight a tiny bit, how does the loss chan
 
 ---
 
-### 💡 Simple Analogy
+### Simple Analogy
 
 Think of standing on a hill with your eyes closed. You want to reach the lowest valley.
 
@@ -132,13 +134,13 @@ Think of standing on a hill with your eyes closed. You want to reach the lowest 
 
 ---
 
-### 🔍 Where Is It Used in ML?
+### Where Is It Used in ML?
 
 The gradient is used in every single training step of every ML model. When the model has thousands of weights, the gradient tells us **how to update all of them at once**.
 
 ---
 
-### 🎯 Why Do I Need to Study This?
+### Why Do I Need to Study This?
 
 A single derivative works for one variable. But ML models have hundreds or millions of weights. The gradient is the *multi-variable version* of the derivative.
 
@@ -149,7 +151,7 @@ A single derivative works for one variable. But ML models have hundreds or milli
 
 ## Part 3 — Gradient Descent: The Learning Algorithm
 
-### 📖 Definition
+### Definition
 
 > **Gradient Descent is an iterative optimization algorithm used to minimize a function (like a loss function) by repeatedly moving in the direction opposite to the gradient.**
 
@@ -157,18 +159,18 @@ This is the algorithm originally attributed to **Augustin-Louis Cauchy (1847)** 
 
 ---
 
-### 🖼️ Visual — Gradient Descent Step by Step
+### Visual — Forward Pass and Backward Pass
 
-![Gradient descent steps down a loss curve](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Gradient_descent.gif/400px-Gradient_descent.gif)
+![Neural network forward and backward](images/nn_forward_backward.jpg)
 
-> 📌 **Each dot = one step the model takes.**
+> **Each dot = one step the model takes.**
 > - Starts at the top (high error)
 > - Takes steps downhill
 > - Eventually lands at the bottom (minimum error)
 
 ---
 
-### ⛰️ The Mountain Analogy
+### The Mountain Analogy
 
 Imagine you are standing on the **peak of a foggy mountain** and you want to reach the **bottom**. You can't see the path — but you can feel which way is downhill right under your feet.
 
@@ -182,7 +184,7 @@ The model does this **over and over** until it reaches the valley (minimum error
 
 ---
 
-### ✏️ The Formula
+### The Formula
 
 ```
 w_new = w_old  −  learning_rate × gradient
@@ -195,21 +197,19 @@ Where:
 
 ---
 
-### 📊 Learning Rate — The Step Size
-
-![Learning rate comparison](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Gradient_ascent_%28surface%29.png/640px-Gradient_ascent_%28surface%29.png)
+### Learning Rate — The Step Size
 
 | Learning Rate | What Happens |
 |---|---|
 | **Too small** | Takes tiny steps → very slow learning, but safe |
 | **Too large** | Takes giant leaps → overshoots the minimum, never converges |
-| **Just right** | Reaches the bottom efficiently ✅ |
+| **Just right** | Reaches the bottom efficiently |
 
-> 💡 **Analogy:** Think of tuning a guitar string. Too loose = flat sound. Too tight = it snaps. The sweet spot is just right.
+> **Analogy:** Think of tuning a guitar string. Too loose = flat sound. Too tight = it snaps. The sweet spot is just right.
 
 ---
 
-### 🔍 Where Is It Used in ML?
+### Where Is It Used in ML?
 
 Gradient Descent (and its variations) is used to train:
 - Linear Regression
@@ -220,7 +220,7 @@ Gradient Descent (and its variations) is used to train:
 
 ---
 
-### 🎯 Why Do I Need to Study This?
+### Why Do I Need to Study This?
 
 Even if you know the direction to move (from the gradient), you need a *systematic process* to keep moving and improving. Gradient Descent is that process.
 
@@ -231,7 +231,7 @@ Even if you know the direction to move (from the gradient), you need a *systemat
 
 ## Part 4 — Backpropagation: How Neural Networks Learn
 
-### 📖 Definition
+### Definition
 
 > **Backpropagation is an algorithm used to train neural networks by computing the gradient of the loss function with respect to each weight, working backward from the output layer to the input layer using the chain rule.**
 
@@ -239,16 +239,16 @@ In plain words: after the model makes a mistake, backpropagation figures out **w
 
 ---
 
-### 🖼️ Visual — Forward Pass and Backward Pass
+### Visual — Forward Pass and Backward Pass
 
-![Neural network forward and backward pass](https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/500px-Colored_neural_network.svg.png)
+![Neural network forward and backward](images/nn_forward_backward.jpg)
 
-> 📌 **Forward pass** = data flows LEFT → RIGHT (input to output, making a prediction)
+> **Forward pass** = data flows LEFT → RIGHT (input to output, making a prediction)
 > **Backward pass** = error flows RIGHT → LEFT (output back to each layer, adjusting weights)
 
 ---
 
-### 📬 The Telephone Game Analogy
+### The Telephone Game Analogy
 
 Imagine a classroom where students sit in a line. The teacher whispers a message at one end. Each student passes it along. By the end, the message is all wrong.
 
@@ -282,7 +282,7 @@ Each term tells how much one layer's output changes when the previous layer's ou
 
 ---
 
-### 🔍 Where Is It Used in ML?
+### Where Is It Used in ML?
 
 Backpropagation is used in every **deep learning** model:
 - Image Recognition (your phone unlocking with face ID)
@@ -293,7 +293,7 @@ Backpropagation is used in every **deep learning** model:
 
 ---
 
-### 🎯 Why Do I Need to Study This?
+### Why Do I Need to Study This?
 
 A neural network can have millions of weights across hundreds of layers. Without backpropagation, we'd have no way to efficiently know how to adjust each weight. It's the only practical way to train deep models.
 
@@ -308,7 +308,7 @@ Let's see all four concepts come together in a real neural network.
 
 ---
 
-### 📋 The Dataset
+### The Dataset
 
 | Student | Hours Studied | Hours Slept | Result |
 |---------|--------------|-------------|--------|
@@ -322,13 +322,13 @@ Let's see all four concepts come together in a real neural network.
 
 ---
 
-### 🏗️ Neural Network Architecture
+### Neural Network Architecture
 
 ```
 Input Layer (2 features)  →  Hidden Layer 1 (4 neurons)  →  Hidden Layer 2 (4 neurons)  →  Output Layer (1 neuron)
 ```
 
-![Simple neural network architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Artificial_neural_network.svg/600px-Artificial_neural_network.svg.png)
+![Neural network forward and backward](images/nn_forward_backward.jpg)
 
 ---
 
@@ -369,7 +369,7 @@ Z₁  =  [ 1.2   0.8   1.5   0.3 ]
 
 ---
 
-### 🌊 Step 3: Activation Function (ReLU) on Hidden Layer 1
+### Step 3: Activation Function (ReLU) on Hidden Layer 1
 
 A linear equation like `Z = XW + b` can only learn **straight-line patterns**. Real-world data is complex and non-linear. So we introduce a **non-linearity** using an **activation function**.
 
@@ -381,8 +381,6 @@ ReLU(z)  =  max(0, z)
 
 > - Positive value → keep it as is
 > - Negative value → replace with 0
-
-![ReLU activation function graph](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/ReLU_and_GELU.svg/640px-ReLU_and_GELU.svg.png)
 
 **Output from Hidden Layer 1 after activation:**
 
@@ -431,7 +429,7 @@ H₂  =  [ 0.9   1.3   0.6   1.1 ]
 
 ---
 
-### 📉 Step 5: Output Layer & Loss Calculation
+### Step 5: Output Layer & Loss Calculation
 
 H₂ is passed to the output layer with weights W₃ (shape 4×1), giving a final prediction Ŷ.
 
@@ -455,7 +453,7 @@ Loss  =  (1/3) × [ (1-0.6)² + (0-0.4)² + (1-0.7)² ]
 
 ---
 
-### 🔁 Step 6: Backpropagation
+### Step 6: Backpropagation
 
 Now we go **backwards** — from the output layer back to the first hidden layer — computing how each weight contributed to the error.
 
@@ -484,7 +482,7 @@ Now we go **backwards** — from the output layer back to the first hidden layer
 
 ---
 
-### 🔄 Step 7: Update Weights (Gradient Descent)
+### Step 7: Update Weights (Gradient Descent)
 
 Once backpropagation computes the gradient for each weight, we update all weights using:
 
@@ -508,7 +506,7 @@ W₁_new  =  [[ 0.205   0.138  -0.079   0.326 ]
 
 ---
 
-### 🔄 The Full Loop (One Epoch = One Full Pass)
+### The Full Loop (One Epoch = One Full Pass)
 
 ```
 1.  Forward Pass   →   X flows through layers → prediction Ŷ
@@ -518,11 +516,11 @@ W₁_new  =  [[ 0.205   0.138  -0.079   0.326 ]
 5.  Repeat         →   Do this for many iterations until loss is very low
 ```
 
-![Backpropagation training loop](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Backpropagation_Learning_Algo.gif/400px-Backpropagation_Learning_Algo.gif)
+![Training loop (forward + backward)](images/training_loop.jpg)
 
 ---
 
-## 📌 Summary Table
+## Summary Table
 
 | Concept | Simple Meaning | Used In |
 |---|---|---|
@@ -536,7 +534,7 @@ W₁_new  =  [[ 0.205   0.138  -0.079   0.326 ]
 
 ---
 
-## 🚀 What's Next?
+## What's Next?
 
 In the upcoming days, we'll apply all of this to:
 - **Linear Regression** — Predict continuous values (e.g., house prices)
